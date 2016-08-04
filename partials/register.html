@@ -1,0 +1,60 @@
+
+<div class="container jumbotron text-center col-xs-10">
+ <li class="dropdown pull-right">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/details.jpg" ></img></a>
+          <ul class="dropdown-menu details-menu">
+            <li>
+              <h4>Formatting of phone number ,currency and max length</h4>
+
+            </li>
+            <li><span class='hightlight'>#5.Phone format is done for "Phone number" field </span></li>
+            <li role="separator" class="divider"></li>
+            <li><span class='hightlight'>#6.currency format is done for "Annual Income" field</span></li>
+            <li role="separator" class="divider"></li>
+            <li><span class='hightlight'>#7.sum of numbers is done.</span><p>Eg : Annual fees is calculated based on Ist,II nd,IIIrd term fees.
+           - same way if Annual fees is modified then its divided into three term fees equally..</p></li>
+           <li role="separator" class="divider"></li>
+            <li><span class='hightlight'>#8.Input max length custom validation is done..for "Credit card" field</span></li>
+           <li role="separator" class="divider"></li>
+          </ul>
+        </li>
+	<h2 class='regHeader'>Register Today !! Win  free webinars ....</h2>
+  <form role="form" class='text-left' name="regFrom">
+  <div class="row container">
+  <div class='col-xs-6'>
+    <div class="form-group">
+    	  <label><span class='required'>*</span>Name:</label><input type='text' required class="form-control" ng-model="name"  name = 'name' placeholder="Enter Your Name ..." format-name></input>
+     
+    </div>
+    <label><span class='required'>*</span>Email address:</label><input type="email" required class="form-control" name = 'email' id="email" placeholder="Enter Your Email Address ..." ng-model="email"/>
+     <label>Phone Number:</label><input type='text' class="form-control" id='phnumber' format = 'phone' name="phnumber" ng-model="phnumber" required autofocus placeholder="Enter Your Phone Number ..."></input>
+
+    <label>Annual Income:</label><input type='text' class="form-control" id='currency' format=  'currency' name="currency" ng-model="currency" required autofocus placeholder="Enter Income ..."></input>
+</div>
+<div class="col-xs-6">
+    <label>Ist Term Fees:</label><input type='text' class="form-control"  format-number ng-model="term1" required autofocus placeholder="Enter Term1 Fees ..." ng-change="getTotal()"></input>
+
+
+    <label>IInd Term Fees:</label><input type='text' class="form-control"  format-number ng-model="term2" required autofocus placeholder="Enter Term2 Fees ..." ng-change="getTotal()"></input>
+
+    <label>IIIrd Term Fees:</label><input type='text' class="form-control"  format-number ng-model="term3" required autofocus placeholder="Enter Term3 Fees ..." ng-change="getTotal()"></input>
+
+   <label>Annual Fees:</label><input type='text' class="form-control"  format-number ng-model="totalFees" required autofocus placeholder="Total Fees..." ng-change="getShareData()">
+  </input>
+
+
+    <label>Credit Card No:</label>
+    <div class='row container'>
+       <input id="code1" type='text' class="col-xs-3 creditNo" ng-model="code1" placeholder="XXXXX" format-number format-code-no maxlength="5"/> <div class='col-xs-1'>-</div>
+       <input id="code2" type='text' class="col-xs-3 creditNo"  ng-model="code2" placeholder="XXXXX" format-number format-code-no maxlength="5"/><div class='col-xs-1'>-</div> 
+      <input id ="code3" type='text' class="col-xs-3 creditNo"  ng-model="code3"  placeholder="XXXXX" format-number format-code-no maxlength="5"/>
+  </div>
+  </div>
+  </div>
+   <span class="fill-msg" 
+         ng-show="regFrom.name.$dirty && regFrom.$error.required">* Fill All Required fields.....</span>
+      
+  </form>
+</div>
+
+ <button name='regBtn' type="submit" class="btn btn-default submit register-btn" ng-click="regFrom.$valid && registration()">Register</button>
