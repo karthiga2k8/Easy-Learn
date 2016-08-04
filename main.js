@@ -1,7 +1,7 @@
 require.config({
     paths: {
     	jquery:'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min',
-        bootstrap:'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min',
+        bootstrap:'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min',
 
         angular: 'libs/angular.min',
         angularUIRouter: 'libs/angular-ui-router.min',
