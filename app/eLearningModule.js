@@ -7,7 +7,7 @@ define(['app/config',
     function(config, detailsController, registerController, registerSuccessController){
     'use strict';
 
-    var app = angular.module('eLearningApp',['ui.router','ngAnimate','directivesModule','servicesModule','ui.bootstrap']);
+    var app = angular.module('eLearningApp',['ui.router','ngAnimate','directivesModule','servicesModule']);
 
     app.config(config);
     app.controller('detailsController',detailsController);

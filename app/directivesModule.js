@@ -23,7 +23,12 @@ app.
              console.log
             var currentLen = element.val().length;
             if (currentLen > parseInt(5)-1 && (!(e.keyCode == 8 || e.keyCode == 46))) {
-                 document.getElementById(attrs.id).nextElementSibling.nextElementSibling.focus();
+
+                var nextElement = document.getElementById(attrs.id).nextElementSibling;
+                 if(nextElement)
+                  {
+                    nextElement.nextElementSibling.focus();
+                  }
                  
     
             }
@@ -94,7 +99,9 @@ app.
         require: 'ngModel',
         link: function (scope, element, attrs, ctrl) {
              ctrl.$parsers.push(function(viewValue) {
-                return viewValue.toUpperCase();
+              if(viewValue){
+                 return viewValue.toUpperCase();
+              }
             });
 
               // Listen for change events to enable binding
