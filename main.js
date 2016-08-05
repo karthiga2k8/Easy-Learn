@@ -9,9 +9,7 @@ require.config({
 
     },
     shim: {
-    	"jquery": {
-            exports: "jquery"
-        },
+    	
         "bootstrap": {
             exports: "bootstrap"
         },
@@ -23,14 +21,18 @@ require.config({
         },
          "angularAnimate": {
             deps: ["angular"]
-        }
+        },
+        "jquery": {
+           deps: ["angular"]
+        },
          
+
 
     }
 })
 
 
-require(['app/eLearningModule','app/directivesModule','app/servicesModule','jquery','bootstrap','angular','angularUIRouter','angularAnimate'],
+require(['app/eLearningModule','app/directivesModule','app/servicesModule','bootstrap','angular','angularUIRouter','angularAnimate','jquery'],
     function() {
         'use strict';
 
